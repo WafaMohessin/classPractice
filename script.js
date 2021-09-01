@@ -1,38 +1,67 @@
+// Roock, Paper, Sessor Game
 
-console.log(this) // window
+//variables for wins, losses, ties
+var wins=0
+var losses=0 
+var ties=0
 
-var planet= {
-    name: "earth",
-    age: "4.234 billion years",
-    moons: 1,
-    continents: ['America','Asia','Afica', {test:3}],
-    supportsLife: true,
-    //Occeans: { IndianOceani: {...console.}},
-    "has + a magnatic feild": true,
-    
-    
-    //method
+var choices = ['R','S','P']
 
-logFacts:function(){
-    console.log(this.name)
-    console.log(this.age) //
-},
+var keepPlaying= true
 
-    tellFun: function() {
-        console.log ("the earth is the only planet.");
-    }, 
-    showAlert: function() {
-        console.log ("the sun is ");
+while (keepPlaying){
+
+
+// prompt the user to choose r,p,s 
+var userChoice = prompt ('Choose R, P, or S to play?');
+console.log(userChoice)
+
+
+// comp randomley choose r, s, p 
+var computerChoice =  choices [Math.floor(Math.random() * choices.length)]
+
+
+//show comp choice to user 
+alert ('Computer chose' + computerChoice) 
+
+
+//check for tie
+    // it's a tie
+    //increment ties
+if (userChoice === computerChoice) {
+    ties += 1  // OR ties ++ if only 1 time
+
+}
+    //check winning conditions
+    //u chose r, comp chose s
+    //u chose p, comp chose r
+    //u chose s, comp p
+        // incrementlosses
+   else if (userChoice === 'S' && computerChoice === 'P' ||
+           userChoice === 'R' && computerChoice === 'S' ||
+           userChoice === 'P' && computerChoice === 'R')
+        {
+            wins++
+        }
+
+// lose
+    //increment losses
+    else {
+            losses++
+        }
+
+    console.log(wins, ties, losses)
+
+
+////display stats
+    alert('Wins: ' + wins + '\nTies: ' + ties + '\nLosses:' + losses)
+
+//confirm play agin //repeat
+    var playAgain= confirm ('Wants to play again?')
+    if (!playAgain){
+        keepPlaying = false
+
     }
-
 }
 
-var Mars = {
-    name: 'mars',
-    logFacts: function(){
-        console.log(this.name)
-    },
-}
-
-planet.logFacts()
-Mars. logFacts()
+alert('Thank you for playing!')

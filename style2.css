@@ -1,0 +1,60 @@
+:root{
+    --light:rgb(239, 251, 253);
+}
+
+
+body {
+    background: var(--light);
+    background-color: lightgray;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+font-size: 24px;
+padding: 10px;
+padding-left: 20px;
+
+}
+
+input[type="submit"]{
+    background-color: rgb(150, 196, 224);
+    color: var(--light);
+    padding-left: 10px;
+    cursor: pointer;
+} 
+
+.container {
+    background-color: rgb(206, 235, 253);
+    margin: 60px auto 0;
+    max-width: 680px;
+    padding: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+#new-todo-form {
+    display: flex;
+    
+    justify-content:space-around ;
+}
+
+#new-todo{
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+#todos-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#todos-list li {
+    background-color: mediumorchid
+    margin-bottom: 5px;
+    padding: 5px;
+
+}
+
